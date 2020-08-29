@@ -46,10 +46,56 @@
 						"type": "Expression"
 					}
 				}
+			},
+			{
+				"name": "filteredArray",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "lkpGetTableNames",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('lkpGetTableNames').output.value",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "@startswith(string(item().name),'cust')",
+						"type": "Expression"
+					}
+				}
+			},
+			{
+				"name": "setFilteredVariable",
+				"type": "SetVariable",
+				"dependsOn": [
+					{
+						"activity": "filteredArray",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "FilteredTableNames",
+					"value": {
+						"value": "@activity('filteredArray').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
 			"TableNames": {
+				"type": "Array"
+			},
+			"FilteredTableNames": {
 				"type": "Array"
 			}
 		},
