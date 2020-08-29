@@ -1,0 +1,21 @@
+{
+	"name": "TableList_DW",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "AzureSynapseAnalytics1",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "AzureSqlDWTable",
+		"schema": [
+			{
+				"name": "Name",
+				"type": "nvarchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "VW_TableList"
+		}
+	}
+}
