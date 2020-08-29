@@ -38,7 +38,14 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"variableName": "TableNames",
+					"value": {
+						"value": "@activity('lkpGetTableNames').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"variables": {
