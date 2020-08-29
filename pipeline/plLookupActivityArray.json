@@ -65,7 +65,7 @@
 						"type": "Expression"
 					},
 					"condition": {
-						"value": "@startswith(string(item().name),'cust')",
+						"value": "@startswith(string(item().name),'customer')",
 						"type": "Expression"
 					}
 				}
