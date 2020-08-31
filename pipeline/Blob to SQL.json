@@ -108,7 +108,10 @@
 						"referenceName": "asCarsTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": "cars"
+							"tableName": {
+								"value": "@concat('cars-',utcnow(),'.csv')",
+								"type": "Expression"
+							}
 						}
 					}
 				],
