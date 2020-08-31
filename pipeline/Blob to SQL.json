@@ -108,10 +108,7 @@
 						"referenceName": "asCarsTable",
 						"type": "DatasetReference",
 						"parameters": {
-							"tableName": {
-								"value": "@concat('cars-',utcnow(),'.csv')",
-								"type": "Expression"
-							}
+							"tableName": "cars"
 						}
 					}
 				],
@@ -120,7 +117,10 @@
 						"referenceName": "cars",
 						"type": "DatasetReference",
 						"parameters": {
-							"fileName": "cars_export.csv"
+							"fileName": {
+								"value": "@concat('cars-',utcnow(),'.csv')",
+								"type": "Expression"
+							}
 						}
 					}
 				]
