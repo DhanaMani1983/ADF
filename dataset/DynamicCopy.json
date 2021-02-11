@@ -2,7 +2,7 @@
 	"name": "DynamicCopy",
 	"properties": {
 		"linkedServiceName": {
-			"referenceName": "AzureBlobStorage2",
+			"referenceName": "AzureDataLakeStorage1",
 			"type": "LinkedServiceReference"
 		},
 		"parameters": {
@@ -14,12 +14,12 @@
 		"type": "DelimitedText",
 		"typeProperties": {
 			"location": {
-				"type": "AzureBlobStorageLocation",
+				"type": "AzureBlobFSLocation",
 				"fileName": {
 					"value": "@CONCAT(dataset().TableName,'-', pipeline().RunId, '.csv')",
 					"type": "Expression"
 				},
-				"container": "dynamic-load-container"
+				"fileSystem": "dynamic-load-container"
 			},
 			"columnDelimiter": "|",
 			"escapeChar": "\\",
