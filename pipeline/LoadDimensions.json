@@ -54,7 +54,7 @@
 					},
 					"activities": [
 						{
-							"name": "Copy table data to blob",
+							"name": "Copy data from table to blob",
 							"type": "Copy",
 							"dependsOn": [],
 							"policy": {
@@ -110,7 +110,8 @@
 										"TableName": {
 											"value": "@{item().SrcTable}",
 											"type": "Expression"
-										}
+										},
+										"FolderName": "RAW"
 									}
 								}
 							]
@@ -120,7 +121,7 @@
 							"type": "Copy",
 							"dependsOn": [
 								{
-									"activity": "Copy table data to blob",
+									"activity": "Copy data from table to blob",
 									"dependencyConditions": [
 										"Succeeded"
 									]
@@ -188,6 +189,46 @@
 										},
 										"TableSchema": "Stg"
 									}
+								}
+							]
+						},
+						{
+							"name": "Copy data from blob to blob",
+							"type": "Copy",
+							"dependsOn": [
+								{
+									"activity": "Copy data from blob to table",
+									"dependencyConditions": [
+										"Succeeded"
+									]
+								}
+							],
+							"policy": {
+								"timeout": "7.00:00:00",
+								"retry": 0,
+								"retryIntervalInSeconds": 30,
+								"secureOutput": false,
+								"secureInput": false
+							},
+							"userProperties": [],
+							"typeProperties": {
+								"source": {
+									"type": "DelimitedTextSource",
+									"storeSettings": {
+										"type": "AzureBlobFSReadSettings",
+										"recursive": true,
+										"enablePartitionDiscovery": false
+									},
+									"formatSettings": {
+										"type": "DelimitedTextReadSettings"
+									}
+								},
+								"enableStaging": false
+							},
+							"inputs": [
+								{
+									"referenceName": "DynamicCopy",
+									"type": "DatasetReference"
 								}
 							]
 						}
