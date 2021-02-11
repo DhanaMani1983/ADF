@@ -22,7 +22,10 @@
 					"value": "@CONCAT(dataset().TableName,'-', pipeline().RunId, '.csv')",
 					"type": "Expression"
 				},
-				"folderPath": "RAW",
+				"folderPath": {
+					"value": "@dataset().FolderName",
+					"type": "Expression"
+				},
 				"fileSystem": "dynamic-load-container"
 			},
 			"columnDelimiter": "|",
