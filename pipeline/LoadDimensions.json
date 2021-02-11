@@ -174,7 +174,8 @@
 										"TableName": {
 											"value": "@{item().SrcTable}",
 											"type": "Expression"
-										}
+										},
+										"FolderName": "RAW"
 									}
 								}
 							],
