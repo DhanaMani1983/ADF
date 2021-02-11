@@ -19,6 +19,7 @@
 					"value": "@CONCAT(dataset().TableName,'-', pipeline().RunId, '.csv')",
 					"type": "Expression"
 				},
+				"folderPath": "RAW",
 				"fileSystem": "dynamic-load-container"
 			},
 			"columnDelimiter": "|",
