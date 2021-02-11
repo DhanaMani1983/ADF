@@ -9,6 +9,10 @@
 			"TableName": {
 				"type": "string",
 				"defaultValue": "dummy"
+			},
+			"TableSchema": {
+				"type": "string",
+				"defaultValue": "dummy"
 			}
 		},
 		"annotations": [],
