@@ -177,7 +177,7 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TableName": {
-											"value": "@{item().SrcTable})",
+											"value": "@{item().SrcTable}",
 											"type": "Expression"
 										},
 										"TableSchema": "Stg"
