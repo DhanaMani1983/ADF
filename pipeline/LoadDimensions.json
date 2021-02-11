@@ -1,6 +1,12 @@
 {
 	"name": "LoadDimensions",
 	"properties": {
+		"parameters": {
+			"ConfigTable": {
+				"type": "string",
+				"defaultValue": "dbo.ConfigTable"
+			}
+		},
 		"annotations": []
 	}
 }
