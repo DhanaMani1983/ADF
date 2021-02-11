@@ -22,7 +22,7 @@
 				"folderPath": "Preprocessed",
 				"container": "dynamic-load-container"
 			},
-			"columnDelimiter": ",",
+			"columnDelimiter": "|",
 			"escapeChar": "\\",
 			"firstRowAsHeader": true,
 			"quoteChar": "\""
