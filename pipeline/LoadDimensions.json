@@ -149,7 +149,7 @@
 								"sink": {
 									"type": "AzureSqlSink",
 									"preCopyScript": {
-										"value": "TRUNCATE TABLE Stg.@{item().SrcTable}",
+										"value": "IF OBJECT_ID(N'stg.@{item().SrcTable}') IS NOT NULL\nBEGIN\nTRUNCATE TABLE Stg.@{item().SrcTable}\nEND",
 										"type": "Expression"
 									},
 									"tableOption": "autoCreate",
