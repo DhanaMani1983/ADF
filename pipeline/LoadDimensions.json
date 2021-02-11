@@ -28,7 +28,8 @@
 						"referenceName": "AzureDemoDb",
 						"type": "DatasetReference",
 						"parameters": {
-							"TableName": "dummy"
+							"TableName": "dummy",
+							"TableSchema": "dummy"
 						}
 					},
 					"firstRowOnly": false
@@ -176,9 +177,10 @@
 									"type": "DatasetReference",
 									"parameters": {
 										"TableName": {
-											"value": "concat('Stg.',@{item().SrcTable})",
+											"value": "@{item().SrcTable})",
 											"type": "Expression"
-										}
+										},
+										"TableSchema": "Stg"
 									}
 								}
 							]
