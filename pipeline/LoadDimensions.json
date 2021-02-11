@@ -48,7 +48,7 @@
 				"userProperties": [],
 				"typeProperties": {
 					"items": {
-						"value": "@activity('GetConfig').output.value",
+						"value": "@activity('GetConfigTable').output.value",
 						"type": "Expression"
 					},
 					"activities": [
