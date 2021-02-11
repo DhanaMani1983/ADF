@@ -16,10 +16,9 @@
 			"location": {
 				"type": "AzureBlobStorageLocation",
 				"fileName": {
-					"value": "@CONCAT(dataset().TableName,'-', pipeline().RunId, '.txt')",
+					"value": "@CONCAT(dataset().TableName,'-', pipeline().RunId, '.csv')",
 					"type": "Expression"
 				},
-				"folderPath": "Preprocessed",
 				"container": "dynamic-load-container"
 			},
 			"columnDelimiter": "|",
