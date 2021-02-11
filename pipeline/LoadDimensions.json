@@ -42,7 +42,13 @@
 						]
 					}
 				],
-				"userProperties": []
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "@activity('GetConfig').output.value",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"parameters": {
